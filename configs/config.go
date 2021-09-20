@@ -8,10 +8,9 @@ import (
 var DB *gorm.DB
 
 func InitDB() {
-	connection := "root:whr1728@tcp(localhost:3306)/Users?parseTime=True"
+	connectionString := "root:whr1728@tcp(0.0.0.0:3306)/Users?parseTime=True"
 	var err error
-	DB, err := gorm.Open(mysql.Open(connection), &gorm.Config{})
-	MigrateDB()
+	DB, err = gorm.Open(mysql.Open(connectionString), &gorm.Config{})
 	if err != nil {
 		panic(err)
 	}

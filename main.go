@@ -1,7 +1,7 @@
 package main
 import (
-	"github.com/whauzan/simple-users-mvc/configs"
-	"github.com/whauzan/simple-users-mvc/routes"
+	"simple-users-mvc/configs"
+	"simple-users-mvc/routes"
 )
 
 func main() {
