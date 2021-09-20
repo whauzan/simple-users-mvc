@@ -55,7 +55,7 @@ func UpdateUserController(echoContext echo.Context) error {
 
 	var userReq RequestUser
 	echoContext.Bind(&userReq)
-	res, err := lib.UpdateBook(userReq.toModel(),intID)
+	res, err := lib.UpdateUser(userReq.toModel(),intID)
 	if err != nil {
 		return echoContext.JSON(http.StatusInternalServerError, map[string]interface{} {
 			"stats":   "err",
@@ -69,7 +69,7 @@ func UpdateUserController(echoContext echo.Context) error {
 func DeleteUserController(echoContext echo.Context) error {
 	ID := echoContext.Param("id")
 	intID, _ := strconv.Atoi(ID)
-	_, e := lib.DeleteBook(intID)
+	_, e := lib.DeleteUser(intID)
 	if e != nil {
 		return echoContext.JSON(http.StatusNotFound, map[string]interface{} {
 			"message": e.Error(),
